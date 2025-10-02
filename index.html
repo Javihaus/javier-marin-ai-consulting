@@ -12,9 +12,9 @@
             --bg-secondary: #2a2a2a;
             --text-primary: #ffffff;
             --text-secondary: #a0a0a0;
-            --accent-green: #39ff14;
-            --accent-blue: #00d9ff;
-            --gradient: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+            --accent-blue: #00d4ff;
+            --accent-blue-dark: #0099cc;
+            --gradient: linear-gradient(135deg, var(--accent-blue), #0066ff);
         }
 
         * {
@@ -39,7 +39,7 @@
         .cursor {
             width: 20px;
             height: 20px;
-            border: 2px solid var(--accent-green);
+            border: 2px solid var(--accent-blue);
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
@@ -107,7 +107,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent-green);
+            color: var(--accent-blue);
         }
 
         /* Mobile Menu */
@@ -180,13 +180,13 @@
 
         .glitch::before {
             animation: glitch-1 2s infinite;
-            color: var(--accent-green);
+            color: var(--accent-blue);
             z-index: -1;
         }
 
         .glitch::after {
             animation: glitch-2 2s infinite;
-            color: var(--accent-blue);
+            color: var(--accent-blue-dark);
             z-index: -2;
         }
 
@@ -236,8 +236,8 @@
             display: inline-block;
             padding: 15px 30px;
             background: transparent;
-            border: 2px solid var(--accent-green);
-            color: var(--accent-green);
+            border: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
@@ -248,10 +248,10 @@
         }
 
         .hero-cta:hover {
-            background: var(--accent-green);
+            background: var(--accent-blue);
             color: var(--bg-primary);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
         }
 
         /* Particles Background */
@@ -268,7 +268,7 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: var(--accent-green);
+            background: var(--accent-blue);
             border-radius: 50%;
             animation: float 6s infinite linear;
         }
@@ -314,68 +314,156 @@
             background-clip: text;
         }
 
-        /* About Section */
-        .about-content {
+        /* Welcome Section */
+        .welcome-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .welcome-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+        }
+
+        .welcome-content p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--accent-blue);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Business Section */
+        .business-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 50px;
             align-items: center;
         }
 
-        .about-image {
-            width: 300px;
-            height: 300px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 120px;
-            color: var(--bg-primary);
-            font-weight: 700;
-            margin: 0 auto;
-        }
-
-        .about-text {
+        .business-text {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-secondary);
         }
 
-        .about-text h3 {
+        .business-text h3 {
             color: var(--text-primary);
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
 
-        /* Services Section */
-        .services-grid {
+        .business-highlights {
+            background: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .business-highlights h4 {
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .business-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .business-highlights li {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .business-highlights li::before {
+            content: "→";
+            color: var(--accent-blue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Capabilities Section */
+        .capabilities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 50px;
+        }
+
+        .capability-card {
+            background: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.1);
+        }
+
+        .capability-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent-blue);
+        }
+
+        .capability-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .service-card {
             background: var(--bg-secondary);
             padding: 40px;
             border-radius: 15px;
-            border: 1px solid rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.1);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            margin: 30px 0;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            border-color: var(--accent-green);
-            box-shadow: 0 20px 40px rgba(57, 255, 20, 0.1);
+            border-color: var(--accent-blue);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
         }
 
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--accent-green);
+            color: var(--accent-blue);
         }
 
         .service-card .price {
@@ -390,25 +478,6 @@
             margin-bottom: 20px;
         }
 
-        .service-features {
-            list-style: none;
-        }
-
-        .service-features li {
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .service-features li::before {
-            content: "✓";
-            color: var(--accent-green);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
         /* Contact Section */
         .contact-content {
             text-align: center;
@@ -416,31 +485,20 @@
             margin: 0 auto;
         }
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 25px;
+        .contact-info {
             background: var(--bg-secondary);
-            border: 1px solid rgba(57, 255, 20, 0.2);
-            border-radius: 50px;
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            margin-top: 30px;
         }
 
-        .contact-link:hover {
-            background: var(--accent-green);
-            color: var(--bg-primary);
-            transform: translateY(-2px);
+        .engagement-info {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
         }
 
         /* Animations */
@@ -468,28 +526,25 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .about-content {
+            .business-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
 
-            .about-image {
-                width: 200px;
-                height: 200px;
-                font-size: 80px;
-            }
-
-            .services-grid {
+            .capabilities-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
             }
 
             .nav-container {
                 padding: 0 15px;
+            }
+
+            .welcome-content h2 {
+                font-size: 2rem;
+            }
+
+            .welcome-content p {
+                font-size: 1.1rem;
             }
         }
 
@@ -500,6 +555,10 @@
 
             .service-card {
                 padding: 30px 20px;
+            }
+
+            .capability-card {
+                padding: 25px 20px;
             }
         }
     </style>
@@ -513,8 +572,10 @@
             <div class="logo">JM</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#welcome">Welcome</a></li>
+                <li><a href="#business">Business</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#investment">Investment</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu-toggle">
@@ -534,78 +595,112 @@
             </h1>
             <p class="hero-subtitle">AI Strategy & Research Consultant</p>
             <p class="hero-description">
-                Transforming organizations through cutting-edge AI research and strategic implementation
+                Transform your great engineers into great AI engineers
             </p>
-            <a href="#contact" class="hero-cta">Let's Collaborate</a>
+            <a href="#contact" class="hero-cta">Schedule a 30-min Strategy Call</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
+    <!-- Welcome Section -->
+    <section id="welcome" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">About</h2>
-            <div class="about-content">
-                <div class="about-image fade-in">JM</div>
-                <div class="about-text fade-in">
-                    <h3>AI Strategy & Research Expert</h3>
-                    <p>Based in Madrid, I specialize in AI strategy and implementation for enterprise organizations. My work combines rigorous research with practical business applications.</p>
+            <div class="welcome-content fade-in">
+                <h2>Welcome</h2>
+                <p>I run a solo consulting practice focused on helping startups build better practices as many software companies transition to AI.</p>
 
-                    <h3>Research Focus</h3>
-                    <p>Published researcher in synthetic data generation, topological data analysis, and quantum computing. Active participant in NeurIPS 2025 and IEEE DSAA 2025.</p>
+                <p>Your talented engineering team deserves to adapt to the AI revolution without replacement. You need a proven approach that transforms your existing team into AI experts. With the right frameworks and guidance, your team can achieve measurable improvements in just 2-3 months.</p>
 
-                    <h3>Expertise</h3>
-                    <p>• AI Strategy & Implementation<br>
-                    • Machine Learning & Deep Learning<br>
-                    • Digital Twins & Simulation<br>
-                    • Causal Inference & Explainable AI<br>
-                    • Enterprise AI Transformation</p>
+                <p>You get independence, not dependencies. You get capabilities, not ongoing contracts.</p>
+
+                <a href="#contact" class="cta-button">Schedule a 30-min Strategy Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Section -->
+    <section id="business" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">AI Consulting for Engineering Leaders</h2>
+            <div class="business-content">
+                <div class="business-text fade-in">
+                    <h3>Transform your great engineers into great AI engineers</h3>
+                    <p>Your talented engineering team deserves to adapt to the AI revolution without replacement. You need a proven approach that transforms your existing team into AI experts. With the right frameworks and guidance, your team can achieve measurable improvements in just 2-3 months.</p>
+                    <p>You get independence, not dependencies. You get capabilities, not ongoing contracts.</p>
+                </div>
+                <div class="business-highlights fade-in">
+                    <h4>When our engagement ends, you'll have:</h4>
+                    <ul>
+                        <li>Continuous improvement processes - Establish feedback loops that transform user interactions into measurable product enhancements</li>
+                        <li>Accelerated experimentation cycles - Transform weeks of testing into days, enabling 3-5x faster product iteration</li>
+                        <li>Data-driven prioritization framework - Replace intuition with systematic methods to identify the highest-impact AI opportunities</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Services</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <h3>Strategic AI Advisory</h3>
-                    <div class="price">$35,000<span style="font-size: 1rem; color: var(--text-secondary);">/month</span></div>
-                    <p>Enterprise AI transformation strategy for Fortune 500 companies</p>
-                    <ul class="service-features">
-                        <li>AI Strategy Development</li>
-                        <li>Technology Assessment</li>
-                        <li>Implementation Roadmaps</li>
-                        <li>ROI Optimization</li>
-                        <li>Change Management</li>
-                    </ul>
+            <h2 class="section-title fade-in">Core Technical Capabilities</h2>
+            <div class="capabilities-grid">
+                <div class="capability-card fade-in">
+                    <h4>Advanced Prompt Engineering & LLM Optimization</h4>
+                    <p>Systematic approaches to prompt design, evaluation, and optimization for production systems. Build reliable, consistent outputs from language models at scale.</p>
                 </div>
 
-                <div class="service-card fade-in">
-                    <h3>Technical Implementation</h3>
-                    <div class="price">$25,000<span style="font-size: 1rem; color: var(--text-secondary);">/month</span></div>
-                    <p>Advanced AI architecture and optimization for funded startups</p>
-                    <ul class="service-features">
-                        <li>System Architecture</li>
-                        <li>Model Development</li>
-                        <li>Performance Optimization</li>
-                        <li>Quality Assurance</li>
-                        <li>Team Training</li>
-                    </ul>
+                <div class="capability-card fade-in">
+                    <h4>Rapid Prototyping & Validation</h4>
+                    <p>Turn AI concepts into working prototypes in days, not weeks. Validate technical feasibility and business impact before committing to full development cycles.</p>
                 </div>
 
+                <div class="capability-card fade-in">
+                    <h4>Agent Systems Architecture</h4>
+                    <p>Design and implement autonomous AI workflows that handle complex, multi-step processes. From simple task automation to sophisticated reasoning systems.</p>
+                </div>
+
+                <div class="capability-card fade-in">
+                    <h4>Document Extraction & Processing</h4>
+                    <p>Build robust pipelines that transform unstructured documents into structured, actionable data. Handle edge cases and maintain accuracy at scale.</p>
+                </div>
+
+                <div class="capability-card fade-in">
+                    <h4>Hands-on Skills Transfer</h4>
+                    <p>Pair programming sessions and intensive training that builds permanent AI capabilities in your team. No black boxes - your engineers learn to own and extend the systems.</p>
+                </div>
+
+                <div class="capability-card fade-in">
+                    <h4>Systematic Experimentation</h4>
+                    <p>Establish frameworks for continuous AI improvement. Design experiments, measure impact, and systematically optimize your AI applications for business outcomes.</p>
+                </div>
+
+                <div class="capability-card fade-in">
+                    <h4>Strategic Content & Positioning</h4>
+                    <p>Leverage AI expertise for growth and developer relations. Define clear value propositions, create compelling technical content, and build market credibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section id="investment" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Investment Options</h2>
+            <div class="services-content">
                 <div class="service-card fade-in">
-                    <h3>Research Collaboration</h3>
-                    <div class="price">$200<span style="font-size: 1rem; color: var(--text-secondary);">/hour</span></div>
-                    <p>Technical audits, proof-of-concepts, and specialized consulting</p>
-                    <ul class="service-features">
-                        <li>Technical Audits</li>
-                        <li>Proof of Concepts</li>
-                        <li>Research Partnerships</li>
-                        <li>Code Reviews</li>
-                        <li>Publications Support</li>
-                    </ul>
+                    <h3>Monthly Advisory</h3>
+                    <div class="price">$15,000<span style="font-size: 1rem; color: var(--text-secondary);">/month</span></div>
+                    <p>Weekly strategy sessions, unlimited access, for teams with ongoing needs</p>
+                    <a href="#contact" class="cta-button">Schedule a 30-min Strategy Call</a>
+                </div>
+
+                <div class="fade-in" style="text-align: center; margin-top: 40px;">
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 20px;">
+                        For anything larger than the advisory work, my minimum level of engagement is $50,000. If you're interested in learning more about that, feel free to send me an email.
+                    </p>
+                    <p style="color: var(--text-secondary);">
+                        Need something more focused? Check out my specialized training programs for specific implementation techniques.
+                    </p>
                 </div>
             </div>
         </div>
@@ -614,28 +709,24 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Let's Work Together</h2>
+            <h2 class="section-title fade-in">Transform your great engineers into great AI engineers</h2>
             <div class="contact-content fade-in">
                 <p style="font-size: 1.2rem; margin-bottom: 30px; color: var(--text-secondary);">
-                    Ready to transform your organization with cutting-edge AI research?
+                    Your talented engineering team deserves to adapt to the AI revolution without replacement. You need a proven approach that transforms your existing team into AI experts. With the right frameworks and guidance, your team can achieve measurable improvements in just 2-3 months.
                 </p>
-                <div class="contact-links">
-                    <a href="mailto:javier@javiermarinvalenzuela.com" class="contact-link">
-                        <span>📧</span> Email
+                <p style="font-size: 1.2rem; margin-bottom: 30px; color: var(--text-secondary);">
+                    You get independence, not dependencies. You get capabilities, not ongoing contracts.
+                </p>
+
+                <div class="contact-info">
+                    <a href="https://calendly.com/javier-marin-ai/strategy-call" target="_blank" class="cta-button" style="font-size: 1.2rem; padding: 20px 40px;">
+                        Schedule a 30-min Strategy Call
                     </a>
-                    <a href="https://calendly.com/javier-marin-ai/strategy-call" target="_blank" class="contact-link">
-                        <span>📅</span> Schedule Call
-                    </a>
-                    <a href="https://www.linkedin.com/in/javiermarinvalenzuela/" target="_blank" class="contact-link">
-                        <span>💼</span> LinkedIn
-                    </a>
-                    <a href="https://github.com/Javihaus" target="_blank" class="contact-link">
-                        <span>🔬</span> Research
-                    </a>
+
+                    <div class="engagement-info">
+                        <strong>Minimum engagement:</strong> $50,000 • <strong>Typical project:</strong> 3-6 months • <strong>Global clients</strong>
+                    </div>
                 </div>
-                <p style="margin-top: 40px; color: var(--text-secondary); font-size: 0.9rem;">
-                    <strong>Minimum engagement:</strong> $50,000 • <strong>Typical project:</strong> 3-6 months • <strong>Global clients</strong>
-                </p>
             </div>
         </div>
     </section>
@@ -730,10 +821,10 @@
         });
 
         // Cursor hover effects
-        document.querySelectorAll('a, .service-card').forEach(el => {
+        document.querySelectorAll('a, .service-card, .capability-card').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.style.transform = 'scale(1.5)';
-                cursor.style.backgroundColor = '#39ff14';
+                cursor.style.backgroundColor = '#00d4ff';
             });
             el.addEventListener('mouseleave', () => {
                 cursor.style.transform = 'scale(1)';
