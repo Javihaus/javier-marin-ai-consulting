@@ -30,7 +30,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
@@ -87,16 +87,29 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-image {
             width: 40px;
             height: 40px;
             border-radius: 50%;
             overflow: hidden;
         }
 
-        .logo img {
+        .logo-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .logo-text {
+            color: #FBF5F0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            white-space: nowrap;
         }
 
         .nav-links {
@@ -138,6 +151,9 @@
             }
             .mobile-menu-toggle {
                 display: flex;
+            }
+            .logo-text {
+                display: none;
             }
         }
 
@@ -713,7 +729,10 @@
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="images/IMG_6452.JPG" alt="Javier Marin">
+                <div class="logo-image">
+                    <img src="images/IMG_6452.JPG" alt="Javier Marin">
+                </div>
+                <span class="logo-text">Javier Marín</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#wellcome">Wellcome</a></li>
