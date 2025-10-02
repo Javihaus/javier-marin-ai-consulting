@@ -121,13 +121,42 @@
         .nav-links a {
             color: #E6DDD6;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             font-weight: 500;
             font-size: 0.9rem;
+            position: relative;
+            padding-bottom: 8px;
         }
 
         .nav-links a:hover {
             color: #E6DDD6;
+        }
+
+        .nav-links a.active {
+            color: #FBF5F0;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #E6DDD6;
+            border-radius: 1px;
+            animation: slideIn 0.3s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: scaleX(0);
+                opacity: 0;
+            }
+            to {
+                transform: scaleX(1);
+                opacity: 1;
+            }
         }
 
         /* Mobile Menu */
@@ -1123,6 +1152,47 @@
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
+
+        // Navigation active section indicator
+        function updateActiveNavigation() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            if (sections.length === 0 || navLinks.length === 0) return;
+
+            const scrollPosition = window.scrollY + 100; // Offset for better detection
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.id;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = sectionId;
+                }
+            });
+
+            // Remove active class from all nav links
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // Add active class to current section's nav link
+            if (currentSection) {
+                const activeLink = document.querySelector(`.nav-links a[href="#${currentSection}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            } else if (window.scrollY < 100) {
+                // If at top of page, make first nav item active
+                navLinks[0]?.classList.add('active');
+            }
+        }
+
+        // Set initial active state
+        updateActiveNavigation();
+
+        // Update active navigation on scroll
+        window.addEventListener('scroll', updateActiveNavigation);
 
         // Particles animation
         function createParticle() {
