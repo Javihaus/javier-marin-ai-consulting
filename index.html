@@ -41,7 +41,7 @@
         .cursor {
             width: 20px;
             height: 20px;
-            border: 2px solid var(--accent-orange);
+            border: 2px solid #E6DDD6;
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
@@ -106,14 +106,15 @@
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: #E6DDD6;
             text-decoration: none;
             transition: color 0.3s ease;
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .nav-links a:hover {
-            color: var(--accent-orange);
+            color: #E6DDD6;
         }
 
         /* Mobile Menu */
@@ -186,7 +187,7 @@
 
         .glitch::before {
             animation: glitch-1 2s infinite;
-            color: var(--accent-orange);
+            color: #E6DDD6;
             z-index: -1;
         }
 
@@ -242,8 +243,8 @@
             display: inline-block;
             padding: 15px 30px;
             background: transparent;
-            border: 2px solid var(--accent-orange);
-            color: var(--accent-orange);
+            border: 2px solid #E6DDD6;
+            color: #E6DDD6;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
@@ -254,10 +255,10 @@
         }
 
         .hero-cta:hover {
-            background: var(--accent-orange);
+            background: #E6DDD6;
             color: var(--bg-primary);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(228, 139, 89, 0.3);
+            box-shadow: 0 10px 30px rgba(230, 221, 214, 0.3);
         }
 
         /* Particles Background */
@@ -274,7 +275,7 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: var(--accent-orange);
+            background: #E6DDD6;
             border-radius: 50%;
             animation: float 6s infinite linear;
         }
@@ -324,6 +325,9 @@
         .welcome-header {
             text-align: center;
             margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .welcome-image {
@@ -336,7 +340,7 @@
         .welcome-content {
             max-width: 800px;
             margin: 0 auto;
-            text-align: left;
+            text-align: center;
         }
 
         .welcome-content h2 {
@@ -355,8 +359,8 @@
         .cta-button {
             display: inline-block;
             padding: 15px 30px;
-            background: var(--accent-orange);
-            color: var(--bg-primary);
+            background: #3C6098;
+            color: #ffffff;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
@@ -365,9 +369,10 @@
         }
 
         .cta-button:hover {
-            background: var(--accent-blue-dark);
+            background: #BFC8D8;
+            color: #112358;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(228, 139, 89, 0.3);
+            box-shadow: 0 10px 30px rgba(191, 200, 216, 0.3);
         }
 
         /* Business Section */
@@ -394,11 +399,11 @@
             background: var(--bg-secondary);
             padding: 30px;
             border-radius: 15px;
-            border-left: 4px solid var(--accent-orange);
+            border-left: 4px solid #E6DDD6;
         }
 
         .business-highlights h4 {
-            color: var(--accent-orange);
+            color: #E6DDD6;
             margin-bottom: 15px;
             font-size: 1.3rem;
         }
@@ -417,7 +422,7 @@
 
         .business-highlights li::before {
             content: "→";
-            color: var(--accent-orange);
+            color: #E6DDD6;
             position: absolute;
             left: 0;
             font-weight: bold;
@@ -435,20 +440,20 @@
             background: var(--bg-secondary);
             padding: 30px;
             border-radius: 15px;
-            border: 1px solid rgba(228, 139, 89, 0.1);
+            border: 1px solid rgba(230, 221, 214, 0.1);
             transition: all 0.3s ease;
         }
 
         .capability-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-orange);
-            box-shadow: 0 15px 35px rgba(228, 139, 89, 0.1);
+            border-color: #E6DDD6;
+            box-shadow: 0 15px 35px rgba(230, 221, 214, 0.1);
         }
 
         .capability-card h4 {
             font-size: 1.3rem;
             margin-bottom: 15px;
-            color: var(--accent-orange);
+            color: #E6DDD6;
         }
 
         .capability-card p {
@@ -507,8 +512,8 @@
             gap: 10px;
             padding: 12px 25px;
             background: var(--bg-secondary);
-            border: 1px solid var(--accent-orange);
-            color: var(--accent-orange);
+            border: 1px solid #E6DDD6;
+            color: #E6DDD6;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 500;
@@ -516,7 +521,7 @@
         }
 
         .download-btn:hover {
-            background: var(--accent-orange);
+            background: #E6DDD6;
             color: var(--bg-primary);
             transform: translateY(-2px);
         }
@@ -537,21 +542,21 @@
             background: var(--bg-secondary);
             padding: 40px;
             border-radius: 15px;
-            border: 1px solid rgba(228, 139, 89, 0.1);
+            border: 1px solid rgba(230, 221, 214, 0.1);
             transition: all 0.3s ease;
             margin: 30px 0;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            border-color: var(--accent-orange);
-            box-shadow: 0 20px 40px rgba(228, 139, 89, 0.1);
+            border-color: #E6DDD6;
+            box-shadow: 0 20px 40px rgba(230, 221, 214, 0.1);
         }
 
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--accent-orange);
+            color: #E6DDD6;
         }
 
         .service-card .price {
@@ -587,7 +592,7 @@
             gap: 10px;
             padding: 15px 25px;
             background: var(--bg-secondary);
-            border: 1px solid rgba(228, 139, 89, 0.2);
+            border: 1px solid rgba(230, 221, 214, 0.2);
             border-radius: 50px;
             color: var(--text-primary);
             text-decoration: none;
@@ -595,7 +600,7 @@
         }
 
         .contact-link:hover {
-            background: var(--accent-orange);
+            background: #E6DDD6;
             color: var(--bg-primary);
             transform: translateY(-2px);
         }
@@ -609,7 +614,7 @@
             background: var(--bg-secondary);
             padding: 40px;
             border-radius: 15px;
-            border: 1px solid rgba(228, 139, 89, 0.2);
+            border: 1px solid rgba(230, 221, 214, 0.2);
             margin-top: 30px;
         }
 
@@ -618,7 +623,7 @@
             color: var(--text-secondary);
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid rgba(228, 139, 89, 0.2);
+            border-top: 1px solid rgba(230, 221, 214, 0.2);
         }
 
         /* Animations */
@@ -1002,7 +1007,7 @@
         document.querySelectorAll('a, .service-card, .capability-card, .book-cover img').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.style.transform = 'scale(1.5)';
-                cursor.style.backgroundColor = '#E48B59';
+                cursor.style.backgroundColor = '#E6DDD6';
             });
             el.addEventListener('mouseleave', () => {
                 cursor.style.transform = 'scale(1)';
