@@ -12,9 +12,11 @@
             --bg-secondary: #2a2a2a;
             --text-primary: #ffffff;
             --text-secondary: #a0a0a0;
-            --accent-blue: #00d4ff;
-            --accent-blue-dark: #0099cc;
-            --gradient: linear-gradient(135deg, var(--accent-blue), #0066ff);
+            --accent-blue: #3C6098;
+            --accent-blue-dark: #112358;
+            --accent-orange: #E48B59;
+            --accent-light: #BFC8D8;
+            --gradient: linear-gradient(135deg, var(--accent-blue), var(--accent-orange));
         }
 
         * {
@@ -39,7 +41,7 @@
         .cursor {
             width: 20px;
             height: 20px;
-            border: 2px solid var(--accent-blue);
+            border: 2px solid var(--accent-orange);
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
@@ -85,12 +87,16 @@
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .nav-links {
@@ -107,7 +113,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent-blue);
+            color: var(--accent-orange);
         }
 
         /* Mobile Menu */
@@ -180,7 +186,7 @@
 
         .glitch::before {
             animation: glitch-1 2s infinite;
-            color: var(--accent-blue);
+            color: var(--accent-orange);
             z-index: -1;
         }
 
@@ -236,8 +242,8 @@
             display: inline-block;
             padding: 15px 30px;
             background: transparent;
-            border: 2px solid var(--accent-blue);
-            color: var(--accent-blue);
+            border: 2px solid var(--accent-orange);
+            color: var(--accent-orange);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
@@ -248,10 +254,10 @@
         }
 
         .hero-cta:hover {
-            background: var(--accent-blue);
+            background: var(--accent-orange);
             color: var(--bg-primary);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(228, 139, 89, 0.3);
         }
 
         /* Particles Background */
@@ -268,7 +274,7 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: var(--accent-blue);
+            background: var(--accent-orange);
             border-radius: 50%;
             animation: float 6s infinite linear;
         }
@@ -321,7 +327,7 @@
         }
 
         .welcome-image {
-            max-width: 100%;
+            max-width: 600px;
             height: auto;
             border-radius: 15px;
             margin-bottom: 30px;
@@ -349,7 +355,7 @@
         .cta-button {
             display: inline-block;
             padding: 15px 30px;
-            background: var(--accent-blue);
+            background: var(--accent-orange);
             color: var(--bg-primary);
             text-decoration: none;
             border-radius: 50px;
@@ -361,7 +367,7 @@
         .cta-button:hover {
             background: var(--accent-blue-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(228, 139, 89, 0.3);
         }
 
         /* Business Section */
@@ -388,11 +394,11 @@
             background: var(--bg-secondary);
             padding: 30px;
             border-radius: 15px;
-            border-left: 4px solid var(--accent-blue);
+            border-left: 4px solid var(--accent-orange);
         }
 
         .business-highlights h4 {
-            color: var(--accent-blue);
+            color: var(--accent-orange);
             margin-bottom: 15px;
             font-size: 1.3rem;
         }
@@ -411,7 +417,7 @@
 
         .business-highlights li::before {
             content: "→";
-            color: var(--accent-blue);
+            color: var(--accent-orange);
             position: absolute;
             left: 0;
             font-weight: bold;
@@ -429,20 +435,20 @@
             background: var(--bg-secondary);
             padding: 30px;
             border-radius: 15px;
-            border: 1px solid rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(228, 139, 89, 0.1);
             transition: all 0.3s ease;
         }
 
         .capability-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-blue);
-            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.1);
+            border-color: var(--accent-orange);
+            box-shadow: 0 15px 35px rgba(228, 139, 89, 0.1);
         }
 
         .capability-card h4 {
             font-size: 1.3rem;
             margin-bottom: 15px;
-            color: var(--accent-blue);
+            color: var(--accent-orange);
         }
 
         .capability-card p {
@@ -465,7 +471,7 @@
         }
 
         .book-cover img {
-            max-width: 100%;
+            max-width: 300px;
             height: auto;
             border-radius: 15px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -501,8 +507,8 @@
             gap: 10px;
             padding: 12px 25px;
             background: var(--bg-secondary);
-            border: 1px solid var(--accent-blue);
-            color: var(--accent-blue);
+            border: 1px solid var(--accent-orange);
+            color: var(--accent-orange);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 500;
@@ -510,7 +516,7 @@
         }
 
         .download-btn:hover {
-            background: var(--accent-blue);
+            background: var(--accent-orange);
             color: var(--bg-primary);
             transform: translateY(-2px);
         }
@@ -531,21 +537,21 @@
             background: var(--bg-secondary);
             padding: 40px;
             border-radius: 15px;
-            border: 1px solid rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(228, 139, 89, 0.1);
             transition: all 0.3s ease;
             margin: 30px 0;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            border-color: var(--accent-blue);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+            border-color: var(--accent-orange);
+            box-shadow: 0 20px 40px rgba(228, 139, 89, 0.1);
         }
 
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--accent-blue);
+            color: var(--accent-orange);
         }
 
         .service-card .price {
@@ -581,7 +587,7 @@
             gap: 10px;
             padding: 15px 25px;
             background: var(--bg-secondary);
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(228, 139, 89, 0.2);
             border-radius: 50px;
             color: var(--text-primary);
             text-decoration: none;
@@ -589,7 +595,7 @@
         }
 
         .contact-link:hover {
-            background: var(--accent-blue);
+            background: var(--accent-orange);
             color: var(--bg-primary);
             transform: translateY(-2px);
         }
@@ -603,7 +609,7 @@
             background: var(--bg-secondary);
             padding: 40px;
             border-radius: 15px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(228, 139, 89, 0.2);
             margin-top: 30px;
         }
 
@@ -612,7 +618,7 @@
             color: var(--text-secondary);
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            border-top: 1px solid rgba(228, 139, 89, 0.2);
         }
 
         /* Animations */
@@ -703,7 +709,9 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">JM</div>
+            <div class="logo">
+                <img src="images/profile-photo.jpg" alt="Javier Marin">
+            </div>
             <ul class="nav-links">
                 <li><a href="#wellcome">Wellcome</a></li>
                 <li><a href="#business">Business</a></li>
@@ -724,7 +732,7 @@
     <section id="wellcome" class="section">
         <div class="container">
             <div class="welcome-header fade-in">
-                <img src="images/Book.png" alt="People, not algorithms, determine success" class="welcome-image">
+                <img src="images/Cover2.png" alt="People, not algorithms, determine success" class="welcome-image">
             </div>
             <div class="welcome-content fade-in">
                 <h2>Wellcome</h2>
@@ -810,7 +818,7 @@
             <h2 class="section-title fade-in">Book</h2>
             <div class="book-content">
                 <div class="book-cover fade-in">
-                    <img src="images/Cover2.png" alt="A Step by Step Guide to Get Out of AI Hype - Javier Marin">
+                    <img src="images/Book.png" alt="A Step by Step Guide to Get Out of AI Hype - Javier Marin">
                 </div>
                 <div class="book-info fade-in">
                     <h3>A Step by Step Guide to Get Out of AI Hype</h3>
@@ -994,7 +1002,7 @@
         document.querySelectorAll('a, .service-card, .capability-card, .book-cover img').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.style.transform = 'scale(1.5)';
-                cursor.style.backgroundColor = '#00d4ff';
+                cursor.style.backgroundColor = '#E48B59';
             });
             el.addEventListener('mouseleave', () => {
                 cursor.style.transform = 'scale(1)';
